@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA Local Biz - Pro Inventory Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-store-alt"></i> LA Local Biz Tracker</h1>
+        <p>Pro Inventory & Cost Management</p>
+    </header>
+
+    <nav>
+        <button id="nav-dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</button>
+        <button id="nav-inventory"><i class="fas fa-boxes"></i> Inventory</button>
+        <button id="nav-suppliers"><i class="fas fa-users"></i> Suppliers</button>
+    </nav>
+
+    <main>
+        <section id="dashboard-section" class="active-section">
+            <h2><i class="fas fa-chart-line"></i> Business Snapshot</h2>
+            <div class="dashboard-grid">
+                <div class="widget">
+                    <h3><i class="fas fa-box-open"></i> Total Inventory Items</h3>
+                    <p id="widget-total-items">--</p>
+                </div>
+                <div class="widget">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Low Stock Items</h3>
+                    <p id="widget-low-stock">--</p>
+                    <ul id="widget-low-stock-list"></ul>
+                </div>
+                 <div class="widget">
+                    <h3><i class="fas fa-users"></i> Total Suppliers</h3>
+                    <p id="widget-total-suppliers">--</p>
+                </div>
+                 </div>
+        </section>
+
+        <section id="inventory-section">
+            <div class="section-header">
+                <h2><i class="fas fa-boxes"></i> Inventory List</h2>
+                <button id="add-inventory-btn" class="add-btn"><i class="fas fa-plus"></i> Add Item</button>
+            </div>
+            <div class="controls">
+                <input type="text" id="inventory-search" placeholder="Search inventory...">
+                <select id="inventory-filter">
+                    <option value="">All Categories</option>
+                    </select>
+            </div>
+            <div class="table-container">
+                <table id="inventory-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="id">Item ID <i class="fas fa-sort"></i></th>
+                            <th data-sort="name">Name <i class="fas fa-sort"></i></th>
+                            <th data-sort="category">Category <i class="fas fa-sort"></i></th>
+                            <th data-sort="stock">Stock <i class="fas fa-sort"></i></th>
+                            <th data-sort="cost">Cost <i class="fas fa-sort"></i></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="suppliers-section">
+             <div class="section-header">
+                <h2><i class="fas fa-users"></i> Suppliers List</h2>
+                <button id="add-supplier-btn" class="add-btn"><i class="fas fa-plus"></i> Add Supplier</button>
+            </div>
+             <div class="controls">
+                <input type="text" id="suppliers-search" placeholder="Search suppliers...">
+            </div>
+            <div class="table-container">
+                <table id="suppliers-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="id">Supplier ID <i class="fas fa-sort"></i></th>
+                            <th data-sort="name">Name <i class="fas fa-sort"></i></th>
+                            <th data-sort="email">Email <i class="fas fa-sort"></i></th>
+                            <th data-sort="phone">Phone <i class="fas fa-sort"></i></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="form-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3 id="form-title">Add New Item</h3>
+                <form id="data-form" novalidate>
+                    <div id="form-fields"></div>
+                    <button type="submit"><i class="fas fa-save"></i> Save</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="notification-area"></div>
+
+    </main>
+
+    <footer>
+        <p>Pro Tracker - Level Up Your LA Biz!</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
